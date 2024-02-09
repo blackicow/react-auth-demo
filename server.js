@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const passport = require("passport");
@@ -18,12 +18,9 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    configVars.MONGODB_URI,
-    { useNewUrlParser: true }
-  )
+  .connect(configVars.MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 // Passport middleware
 app.use(passport.initialize());
